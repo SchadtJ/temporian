@@ -3181,6 +3181,17 @@ class EventSetOperations:
 
         return moving_min(self, window_length=window_length, sampling=sampling)
 
+    def min( #JAMES
+        self: EventSetOrNode
+    ) -> EventSetOrNode:
+        """...
+        """
+        print("JAMANTHAL YEEEHAW")
+        from temporian.core.operators.window.moving_min import min
+        return min(self)
+        # from temporian.core.operators.add_index import set_index
+        # return set_index(self, indexes=indexes)
+
     def moving_standard_deviation(
         self: EventSetOrNode,
         window_length: WindowLength,

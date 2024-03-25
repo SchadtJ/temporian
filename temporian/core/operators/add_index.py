@@ -47,7 +47,7 @@ class AddIndexOperator(Operator):
 
         self.add_attribute("indexes", indexes)
 
-        self.add_output(
+        self.add_output( #JAMES??? not EventSet
             "output",
             create_node_new_features_new_sampling(
                 features=output_feature_schemas,

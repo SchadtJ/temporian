@@ -39,7 +39,7 @@ class FilterMaxMovingCountNumpyImplementation(OperatorImplementation):
         output_schema = self.output_schema("output")
 
         # Create output EventSet
-        output_evset = EventSet(data={}, schema=output_schema)
+        output_evset = EventSet(data={}, schema=output_schema) #JAMES
 
         window_length = self.operator.window_length
 

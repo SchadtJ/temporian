@@ -15,6 +15,7 @@
 """Moving count operator class and public API function definition."""
 
 from typing import Optional
+import numpy as np
 
 from temporian.core import operator_lib
 from temporian.core.compilation import compile
@@ -58,3 +59,23 @@ def moving_min(
         window_length=window_length,
         sampling=sampling,
     ).outputs["output"]
+
+@compile
+def min(
+    input: EventSetOrNode
+) -> EventSetOrNode:
+    assert isinstance(input, EventSetNode)
+
+    max_movement = input.moving_min(np.inf)#
+    return max_movement
+
+    # return input.moving_max(np.inf).end().outputs["output"]
+
+    # min_events = MovingMinOperator(
+    #     input=input,
+    #     window_length=np.inf
+    # ).end().outputs["output"]
+
+    # output_evset = EventSet(data={}, schema=output_schema) #JAMES
+
+    return min_events
